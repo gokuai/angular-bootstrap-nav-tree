@@ -1,121 +1,187 @@
-/* 
-   abn-tree.css
+ul.nav.nav-list.abn-tree{
+    font-size: 16px;
+}
+ul.nav.nav-list.abn-tree .nav-header{
+    height: 32px;
+    line-height: 32px;
+    font-size: 14px;
+    padding: 0 10px;
+    padding-right: 20px;
+    position: relative;
+}
+ul.nav.nav-list.abn-tree .nav-header button{
+    position: absolute;
+    right:0;
+    top:0;
+    padding:0 5px;
+    background: none;
+    border: 0 none;
+    height: 32px;
+}
+ul.nav.nav-list.abn-tree .nav-header button:hover i{
+    background-position: -24px -324px;
+}
+ul.nav.nav-list.abn-tree .tree-icon{
+    width: 20px;
+    height: 20px;
+    background-image: url(../../images/icon.png);
+    background-repeat: no-repeat;
+    background-position: -20px -40px;
+    display: inline-block;
+    vertical-align: middle;
+    margin: -2px 0 0 0;
+}
+ul.nav.nav-list.abn-tree .node_icon{
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    margin: -3px 2px 0 2px;
 
-   style for the angular-bootstrap-nav-tree
-   for both Bootstrap 2 and Bootstrap 3
-
-*/
-
-
-
-/* ------------------------------------------
-AngularJS Animations...
-
-The first selector is for Angular 1.1.5
-The second selector is for Angular 1.2.0
-
-*/
-.abn-tree-animate-enter,
-li.abn-tree-row.ng-enter {
-  transition: 200ms linear all;
+}
+ul.nav.nav-list.abn-tree .tree-icon.icon-minus{
+    background-position: -20px -20px;
+}
+ul.nav.nav-list.abn-tree i.indented {
+  padding: 2px;
+}
+.abn-tree-animate-enter {
+  transition: 150ms linear all;
   position: relative;
   display: block;
   opacity: 0;
-  max-height:0px;
+  max-height: 0px;
 }
-.abn-tree-animate-enter.abn-tree-animate-enter-active,
-li.abn-tree-row.ng-enter-active{
+.abn-tree-animate-enter.abn-tree-animate-enter-active {
   opacity: 1;
-  max-height:30px;
+  max-height: 30px;
 }
-
-.abn-tree-animate-leave,
-li.abn-tree-row.ng-leave {
-  transition: 200ms linear all;
+.abn-tree-animate-leave {
+  transition: 150ms linear all;
   position: relative;
   display: block;
-  height:30px;
   max-height: 30px;
   opacity: 1;
 }
-.abn-tree-animate-leave.abn-tree-animate-leave-active,
-li.abn-tree-row.ng-leave-active {  
-  height: 0px;
-  max-height:0px;
+.abn-tree-animate-leave.abn-tree-animate-leave-active {
+  max-height: 0px;
   opacity: 0;
 }
 
-
-/* 
-------------------------------------------
-Angular 1.2.0 Animation 
-*/
-
-
-.abn-tree-animate.ng-enter{
-
-}
-.abn-tree-animate.ng-enter{
-
+ul.nav.nav-list.abn-tree > li{
+   white-space: nowrap;
 }
 
 
-
-
-/*
-   end animation stuff
------------------------------------------
-   begin normal css stuff
-*/
-ul.abn-tree li.abn-tree-row {  
-  padding: 0px;
-  margin:0px;
+ul.abn-tree > .hover > a,
+ul.abn-tree > li:not(.nav-header) > a:hover{
+    background: #393d42;
+    color:#fff;
+}
+ul.nav.nav-list.abn-tree>li.active>a{
+    text-decoration: none;
+    background-color: #448DE8;
+    color:#fff;
 }
 
-ul.abn-tree li.abn-tree-row a {
-  padding: 3px 10px;
+/*ul.nav.nav-list.abn-tree > li > a:hover .tree-icon,*/
+/*ul.nav.nav-list.abn-tree > li > a:focus .tree-icon,*/
+ul.nav.nav-list.abn-tree>.active>a .tree-icon,
+ul.nav.nav-list.abn-tree>a:hover .tree-icon,
+ul.nav.nav-list.abn-tree>a:focus .tree-icon
+{
+    background-position: 0 -40px;
+
 }
 
-ul.abn-tree i.indented {
-  padding: 2px;
+/*ul.nav.nav-list.abn-tree > li > a:hover .icon-minus,*/
+/*ul.nav.nav-list.abn-tree > li > a:focus .icon-minus,*/
+ul.nav.nav-list.abn-tree>.active>a .icon-minus,
+ul.nav.nav-list.abn-tree>a:hover .icon-minus,
+ul.nav.nav-list.abn-tree>a:focus .icon-minus{
+    background-position: 0 -20px;
 }
 
-.abn-tree {
-  cursor: pointer;
+
+ul.nav.nav-list{
+    padding: 0;
 }
-ul.nav.abn-tree .level-1 .indented {
-  position: relative;
-  left: 0px;
+ul.nav.nav-list.abn-tree{
+    font-size: 12px;
 }
-ul.nav.abn-tree .level-2 .indented {
-  position: relative;
-  left: 20px;
+ul.nav.nav-list.abn-tree i.indented{
+    padding: 0;
 }
-ul.nav.abn-tree .level-3 .indented {
-  position: relative;
-  left: 40px;
+ul.nav.nav-list.abn-tree > li{
+    margin: 2px 0;
+    font-weight: normal;
 }
-ul.nav.abn-tree .level-4 .indented {
-  position: relative;
-  left: 60px;
+
+
+ul.nav > li:not(.nav-header) > a{
+    padding: 1px 15px 1px 0;
+    border-left:4px solid transparent;
+    color:#9FA7AC;
+    height: 30px;
+    line-height: 30px;
+    transition:background-color linear .1s;
+    -webkit-transition:background-color linear .1s;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
-ul.nav.abn-tree .level-5 .indented {
-  position: relative;
-  left: 80px;
+
+ul.nav > li:not(.nav-header) > a.show_atcount{
+    padding:1px 35px 1px 0;
 }
-ul.nav.abn-tree .level-6 .indented {
-  position: relative;
-  left: 100px;
+
+.left_sidebar ul.nav.nav-list.abn-tree > li .hint_wrapper.show_atcount{
+    right:20px;
+    top:0px;
 }
-ul.nav.nav-list.abn-tree .level-7 .indented {
-  position: relative;
-  left: 120px;
+
+ul.nav > li:not(.nav-header) > a > span.show_atcount > i{
+    width: 25px;
+    height: 18px;
+    border-radius: 15px;color: #fff;
+    font-weight: bold;
 }
-ul.nav.nav-list.abn-tree .level-8 .indented {
-  position: relative;
-  left: 140px;
+
+ul.nav.nav-list.abn-tree .tree-icon{
+    background: none;
+    text-align: right;
 }
-ul.nav.nav-list.abn-tree .level-9 .indented {
-  position: relative;
-  left: 160px;
+ ul.nav.nav-list.abn-tree .tree-icon i{
+    height: 0;
+    width: 0;
+    line-height: 0;
+    border: 4px solid transparent;
+    border-left-color: #eaeaea;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 6px;
+    transition:all linear .1s;
+    -webkit-transition:-webkit-transform linear .1s;
+    transform-origin:25% 50%;
+    -webkit-transform-origin:25% 50%;
+
 }
+ul.nav.nav-list.abn-tree .tree-icon:hover i{
+    border-left-color: #fff;
+
+}
+ul.nav.nav-list.abn-tree .icon_fold{
+
+}
+ul.nav.nav-list.abn-tree .icon_unfold i{
+    transform:rotate(90deg);
+    -webkit-transform:rotate(90deg);
+}
+
+
+
+ul.nav.nav-list.abn-tree > li.active > a{
+    color: #fff;
+    font-weight: bold;
+}
+
