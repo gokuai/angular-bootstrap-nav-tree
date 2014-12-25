@@ -1,0 +1,30 @@
+<ul class="nav nav-list abn-tree">
+  <li ng-show="header" class="nav-header" title="{{header}}">
+      <span>{{ header }}</span>
+      <button ng-if="showHeaderBtn" ng-click="onHeaderClick()" title="点击进入管理后台"><i class="icon16x16 icon_manage"></i></button>
+  </li>
+  <li ng-repeat="row in tree_rows | orderBy:orderBy | filter:{visible:true} "
+      data-branch="{{row.branch.data}}"
+      dropable="true"
+      drag-over="dropOver($event,row.branch)"
+      drag-leave="dropOut($event,row.branch)"
+      drop-success="drop($event,row.branch)"
+      ng-class="{'hover':row.branch.hover,'active':row.branch.selected}"
+      class="abn-tree-row level-{{row.level}}"
+      show-hide-node="{{row.branch}}">
+      <a  ng-click="user_clicks_branch($event,row.branch)" ng-dblclick="user_dblclicks_branch(row.branch)" title="{{ row.label }}" ng-class="showMsgIcon && row.branch.atcount > 0 ? 'show_atcount':''">
+          <span ng-class="row.tree_icon" ng-show="row.tree_icon" class="indented tree-icon" ng-style="{'margin-left':(row.level-1)*20}">
+              <i ng-show="row.branch.hasChildren"></i>
+          </span>
+          <i class="icon16x16 node_icon" ng-if="!row.node_img" ng-class="row.node_icon" ng-show="row.node_icon"></i>
+          <team-logo ng-if="row.node_img" class="avatar avatar_mini" gk-src="{{row.node_img}}" title="{{ row.label }}"></team-logo>
+          <span class="indented tree-label">{{ row.label}}</span>
+          <span class="hint_wrapper" ng-if="showMsgIcon && row.branch.atcount == 0" ng-class="row.branch.showNewIcon ?'show':''">
+              <i class="hint"></i>
+          </span>
+          <span class="hint_wrapper show_atcount" ng-if="showMsgIcon && row.branch.atcount > 0"  ng-class="row.branch.showNewIcon ?'show':''">
+              <i class="hint" ng-bind="row.branch.atcount" ></i>
+          </span>
+      </a>
+  </li>
+</ul>

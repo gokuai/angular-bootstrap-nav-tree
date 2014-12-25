@@ -6,7 +6,7 @@ module.directive('abnTree', ['$timeout','$parse','$window',function($timeout,$pa
   return {
     restrict: 'E',
     replace:true,
-    templateUrl: 'bower_components/abn.tree/abn_tree_template.html',
+    templateUrl: 'abn_tree_template.html',
     scope: {
       treeData: '=',
       onSelect: '&',
